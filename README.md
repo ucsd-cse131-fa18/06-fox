@@ -36,7 +36,6 @@ $ git push
 =======
 Fox has the _same_ language features and semantics as Egg-eater, except
 that *you* will implement the automated memory management.
->>>>>>> master
 
 A heads up – there aren't a ton of lines of code needed to 
 complete the assignment; I wrote around 350 lines in `gc.c`.  
