@@ -34,6 +34,7 @@ $ git push
 
 ## Language
 =======
+
 Fox has the _same_ language features and semantics as Egg-eater, except
 that *you* will implement the automated memory management.
 
