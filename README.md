@@ -99,13 +99,10 @@ The behavior should be:
     as appropriate.
 5.  Evaluate to the tuple element at the specified index.
 
-You _can_ do this with just `EAX`, but it causes some minor pain.  The register
-`ECX` has been added to the registers in `instruction.ml` – feel free to
-generate code that uses both `EAX` and `ECX` in this case (for example saving
-the index in `ECX` and using `EAX` to store the address of the tuple).  This
-can save a number of instructions.  Note that we will generate code that
-doesn't need to use `ECX` or `EAX` beyond the extent of this one expression, so
-there is no need to worry about saving or restoring the old value from `ECX`.
+You can do this with just EAX, but it causes some minor pain. The register ECX
+has been added to the registers. Feel free to generate code that uses both EAX
+and ECX in this case (for example saving the index in ECX and using EAX to
+store the address of the tuple).
 
 You also may want to use an extended syntax for `mov` in order to combine these
 values for lookup.  For example, this kind of arithmetic is allowed inside
@@ -115,12 +112,12 @@ values for lookup.  For example, this kind of arithmetic is allowed inside
   mov eax, [eax + ecx * 4]
 ```
 
-This would access the memory at the location of `eax`, offset by the value of
-`ecx * 4` plus one.  So if the value in `ecx` were, say `2`, this may be part
-of a scheme for accessing the first element of a tuple (there are other details
-you should think through here; this is _not_ a complete solution) Feel free to
-add additional `arg` types in `instruction.ml` to support a broader range of
-`mov` instructions, if it helps.
+This would access the memory at the location of eax, offset by the value of
+ecx * 4 plus one. So if the value in ecx were, say 2, this may be part of a
+scheme for accessing the first element of a tuple (there are other details
+you should think through here; this is not a complete solution.) Feel free
+to add additional Arg types in Types.hs to support a broader range of mov
+instructions, if it helps.
 
 Neither `ECX` nor anything beyond the typical `RegOffset` is _required_ to make
 this work, but you may find it interesting to try different shapes of
