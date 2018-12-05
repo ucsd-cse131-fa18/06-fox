@@ -23,7 +23,7 @@ endif
 endif
 endif
 
-CLANG=clang $(WINSTUFF) -g -m32 -mstackrealign -fsanitize=address
+CLANG=clang $(WINSTUFF) -g -m32 -mstackrealign # -fsanitize=address
 
 .PHONY: test bin build clean distclean turnin \
 	$(ASMS) $(OBJS) $(RUNS) $(RESULTS)
