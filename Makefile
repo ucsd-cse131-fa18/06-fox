@@ -43,7 +43,7 @@ tests/output/%.result: tests/output/%.run FORCE
 
 
 tests/output/%.run: tests/output/%.o c-bits/main.c c-bits/gc.o c-bits/types.o FORCE
-	$(CLANG) -o $@ c-bits/main.c $<
+	$(CLANG) -o $@ c-bits/main.c c-bits/gc.c c-bits/types.c $<
 
 tests/output/%.o: tests/output/%.s FORCE
 	nasm -f $(FORMAT) -o $@ $<
