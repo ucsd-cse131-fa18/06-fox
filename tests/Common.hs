@@ -50,7 +50,7 @@ run name heapMb pgm = do
   readResult resF logF r
   where
     cmd    = printf "make %s %s"  resF heapSz
-    resF   = dirExt "output" name Res
+    resF   = dirExt "output" name VRes
     logF   = dirExt "output" name Log
     heapSz = maybe "" (("HEAP=" ++) . show) heapMb
 
